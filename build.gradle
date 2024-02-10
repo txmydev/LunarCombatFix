@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'com.github.txmy'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot:1.20.2-R0.1-SNAPSHOT'
+    implementation 'org.contrum.abyss:api:1.0.1'
+
+}
+
+shadowJar {
+    archiveClassifier.set("")
+    archiveBaseName.set("lunarcombatfix")
+    archiveVersion.set(project.version)
+}
+
+test {
+    useJUnitPlatform()
+}
